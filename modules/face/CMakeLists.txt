@@ -1,12 +1,15 @@
 set(the_description "Face recognition etc")
 ocv_define_module(face opencv_core
     opencv_imgproc
-    opencv_objdetect
     opencv_video     # estimateRigidTransform() (trainFacemark)
-    opencv_photo     # seamlessClone() (face_swap sample)
     WRAP python java
 )
-# NOTE: objdetect module is needed for one of the samples
+
+if(BUILD_EXAMPLES)
+    ocv_add_dependencies(opencv_face
+        opencv_objdetect  
+        opencv_photo) # seamlessClone() (face_swap sample)
+endif()
 
 set(__commit_hash "8afa57abc8229d611c4937165d20e2a2d9fc5a12")
 set(__file_hash "7505c44ca4eb54b4ab1e4777cb96ac05")
