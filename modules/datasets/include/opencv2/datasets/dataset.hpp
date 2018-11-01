@@ -205,7 +205,7 @@ Usage:
 
 Implements loading dataset:
 
-"PARSE Dataset": <http://www.ics.uci.edu/~dramanan/papers/parse/>
+"PARSE Dataset": <https://www.cs.cmu.edu/~deva/papers/parse/index.html>
 
 Usage:
 -# From link above download dataset file: `people.zip`.
