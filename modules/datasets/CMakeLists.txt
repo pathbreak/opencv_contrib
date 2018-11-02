@@ -7,7 +7,11 @@ elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
   ocv_append_source_files_cxx_compiler_options(filter_srcs "-Wno-inconsistent-missing-override")  # Clang
 endif()
 
-ocv_define_module(datasets opencv_core opencv_imgcodecs opencv_ml opencv_flann OPTIONAL opencv_text WRAP python)
+ocv_define_module(datasets opencv_core opencv_imgcodecs WRAP python)
+
+if(BUILD_EXAMPLES)
+  ocv_add_dependencies(opencv_datasets opencv_ml opencv_flann opencv_text)
+endif()
 
 ocv_warnings_disable(CMAKE_CXX_FLAGS
     /wd4267                                      # flann, Win64
