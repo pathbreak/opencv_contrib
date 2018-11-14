@@ -1,4 +1,5 @@
 #include "precomp.hpp"
+#include "opencv2/imgproc.hpp"
 using namespace caffe;
 
 namespace cv

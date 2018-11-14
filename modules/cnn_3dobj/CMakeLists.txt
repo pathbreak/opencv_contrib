@@ -1,3 +1,5 @@
+set(the_description "CNN for 3D object recognition and pose estimation including a completed Sphere View on 3D objects")
+
 set(BUILD_opencv_cnn_3dobj_INIT OFF)  # Must be disabled by default - requires custom build of Caffe.
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR})
@@ -35,8 +37,16 @@ else()
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 include_directories(${Caffe_INCLUDE_DIR})
-set(the_description "CNN for 3D object recognition and pose estimation including a completed Sphere View on 3D objects")
-ocv_define_module(cnn_3dobj opencv_core opencv_imgproc ${Caffe_LIBS} ${Glog_LIBS} ${Protobuf_LIBS} OPTIONAL opencv_features2d opencv_viz opencv_calib3d WRAP python)
+
+ocv_define_module(cnn_3dobj opencv_core opencv_imgcodecs opencv_imgproc WRAP python)
+ocv_target_link_libraries(${the_module} ${Caffe_LIBS} ${Glog_LIBS} ${Protobuf_LIBS})
+
+# Only the examples require features2d (BFMatcher, knnMatch) and viz.
+# calib3d is not required either by the module or by its examples.
+if(BUILD_EXAMPLES)
+  ocv_add_dependencies(opencv_cnn_3dobj opencv_features2d opencv_viz)
+endif()
+
 ocv_add_testdata(testdata/cv contrib/cnn_3dobj)
 
 if(TARGET opencv_test_cnn_3dobj)

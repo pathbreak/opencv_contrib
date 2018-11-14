@@ -1,4 +1,5 @@
 #include "precomp.hpp"
+#include "opencv2/imcodecs.hpp"
 using namespace cv;
 using namespace std;
 

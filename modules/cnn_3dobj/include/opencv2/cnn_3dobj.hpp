@@ -64,10 +64,7 @@ the use of this software, even if advised of the possibility of such damage.
 #include <caffe/proto/caffe.pb.h>
 #include <caffe/util/io.hpp>
 
-#include "opencv2/viz/vizcore.hpp"
-#include "opencv2/highgui.hpp"
-#include "opencv2/highgui/highgui_c.h"
-#include "opencv2/imgproc.hpp"
+#include "opencv2/core.hpp"
 
 /** @defgroup cnn_3dobj 3D object recognition and pose estimation API
 
