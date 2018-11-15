@@ -3,8 +3,7 @@
 This module uses Convolutional Neural Networks for detecting objects in an image
 
 ## Dependencies
-- opencv dnn module
-- Google Protobuf
+None
 
 ## Building this module
 
