@@ -13,6 +13,5 @@
 #include <algorithm>
 
 #include "opencv2/core.hpp"
-#include "opencv2/dnn.hpp"
 
 #endif // __OPENCV_DNN_OBJDETECT_PRECOMP_HPP__
