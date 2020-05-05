@@ -1,0 +1,19 @@
+{
+    "class_ignore_list" : [
+        "SURF",
+        "BoostDesc",
+        "FREAK",
+        "HarrisLaplaceFeatureDetector",
+        "LUCID",
+        "VGG",
+        "SURF_CUDA",
+        "SIFT",
+        "PCTSignaturesSQFD",
+        "DAISY",
+        "LATCH",
+        "BriefDescriptorExtractor",
+        "StarDetector",
+        "PCTSignatures",
+        "MSDDetector"
+    ]
+}
