@@ -1,3 +1,11 @@
+# Customized OpenCV for Android SDK
+
+## Overview
+
+This branch **android430custom** of this OpenCV contrib fork can be used to build a customized size-optimized
+[OpenCV for Android (O4A) SDK](https://opencv.org/android/). See my main project fork 
+https://github.com/pathbreak/opencv/tree/android430custom for details about these customizations.
+
 ## Repository for OpenCV's extra modules
 
 This repository is intended for development of so-called "extra" modules,
